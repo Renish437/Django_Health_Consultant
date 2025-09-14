@@ -1,9 +1,13 @@
 
 from django.shortcuts import HttpResponse,render
-
+from myapp.models import *
 
 def home(request):
-    return render(request,'home/index.html')
+    topnav = TopNavbar.objects.first()
+    context ={
+        'topnav':topnav
+    }
+    return render(request,'home/index.html',context)
 
 def about(request):
     return render(request,'about/index.html')
