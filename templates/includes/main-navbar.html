@@ -1,0 +1,87 @@
+{% load static %}
+<!--Start mainmenu area-->
+<section class="mainmenu-area stricky">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 clearfix">
+                <!--Start logo-->
+                <div class="logo pull-left">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'images/resources/logo.png' %}" alt="Health Coach Logo">
+                    </a>
+                    <div class="smile">
+                        <img src="{% static 'images/resources/smile.png' %}" alt="">
+                    </div>
+                </div>
+                <!--End logo-->
+                <!--Start mainmenu-->
+                <nav class="main-menu pull-left">
+                    <div class="navbar-header">   	
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse clearfix">
+                        <ul class="navigation clearfix">
+                            <li class="current"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="dropdown"><a href='{% url "about" %}'>ABOUT US</a>
+                                <ul>
+                                    <li><a href="{% url 'about-health-coach' %}">About Health Coach</a></li>
+                                     <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                                   
+                                    <li><a href="{% url 'projects' %}">Gallery</a></li>
+                                    <li><a href="#">Gallery Single</a></li>
+                                    <li><a href="{% url 'faqs' %}">FAQ’s</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="{% url 'services' %}">Services</a>
+                               
+                            </li>
+                            <li class="dropdown"><a href="{% url 'events' %}">Events</a>
+                                
+                            </li>
+                            <li class="dropdown"><a href="{% url 'blogs' %}">Blog</a>
+                               
+                            </li>
+                            <li class="dropdown"><a href="{% url 'shops' %}">Shop</a>
+                                <ul>
+                                    <li><a href="{% url 'shops' %}">Shop Products</a></li>
+                                  
+                                    <li><a href="{% url 'shops' %}">Shopping Cart</a></li>
+                                    <li><a href="{% url 'checkouts' %}">Checkout</a></li>
+                                    <li><a href="{% url 'accounts' %}">My Account</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'contacts' %}">Contact Us</a></li>
+                           
+                        </ul>
+                    </div>
+                </nav>
+                <!--End mainmenu-->
+                <!--Start mainmenu right box-->
+                <div class="mainmenu-right-box pull-right">
+                    <div class="outer-search-box">
+                        <div class="seach-toggle"><i class="fa fa-search"></i></div>
+                        <ul class="search-box">
+                            <li>
+                                <form method="post" action="#">
+                                    <div class="form-group">
+                                        <input type="search" name="search" placeholder="Search Here" required>
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="appointment-button">
+                        <a class="thm-btn bgclr-1" href="#">Appointment</a>
+                    </div>
+                </div> 
+                <!--End mainmenu right box-->
+            </div>   
+        </div>
+    </div>
+</section>
+<!--End mainmenu area-->
