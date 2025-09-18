@@ -48,20 +48,20 @@
                 <div class="text-holder">
                     <div class="sec-title text-right">
                         <h3>Some Story Behind Us</h3>
-                        <h1>We Have 20 Years of Experience</h1>
-                        <p>We handpick the best coaches and health experts from across the country to make sure you get the most personalized health care you deserve between those doctor visits.</p>
+                        <h1> {{about.title}} </h1>
+                        <p> {{about.descrption}} </p>
                     </div> 
                     <div class="row text-box">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="single-text-box pdr-30 text-right">
                                 <h3>Our Mission</h3>
-                                <p>Explain to you how all this mistaken idea of denouncing pleasure work praising pain was born and will give.</p>
+                                <p> {{about.our_mission}} </p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="single-text-box pdl-30 text-left">
                                 <h3>Our Vision</h3>
-                                <p>Pleasure work praising pain was born and will give you a complete design account of the system.</p>
+                                <p>{{about.our_vision}}</p>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                                     <a class="thm-btn bgclr-1" href="#">Read More</a>    
                                 </div> 
                                 <div class="signature pull-right">
-                                    <img src="{% static 'images/resources/signature.png' %}" alt="Signature">    
+                                    <img src="{{about.signature.url}}" alt="Signature">    
                                 </div>   
                             </div>
                         </div>
@@ -81,7 +81,7 @@
             </div> 
             <div class="col-md-5">
                 <div class="img-holder wow slideInRight text-center">
-                    <img src="{% static 'images/resources/callto-action.png' %}" alt="Call to Action Image">
+                    <img src="{{about.image.url}}" alt="Call to Action Image">
                 </div>
             </div>   
         </div>

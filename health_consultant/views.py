@@ -4,27 +4,27 @@ from myapp.models import *
 
 def home(request):
   
-    return render(request,'home/index.html')
+    return render(request,'home/home.html')
 
 def about(request):
-    return render(request,'about/index.html')
+    return render(request,'about/about.html')
 def aboutHealthCoach(request):
     return render(request,'about/about-health-coach.html')
 
 def services(request):
-    return render(request,'services/index.html')
+    return render(request,'services/services.html')
 
 def events(request):
-    return render(request,'events/index.html')
+    return render(request,'events/events.html')
 
 def contacts(request):
-    return render(request,'contacts/index.html')
+    return render(request,'contacts/contacts.html')
 def testimonials(request):
-    return render(request,'testimonials/index.html')
+    return render(request,'testimonials/testimonials.html')
 def projects(request):
-    return render(request,'projects/index.html')
+    return render(request,'projects/projects.html')
 def faqs(request):
-    return render(request,'faqs/index.html')
+    return render(request,'faqs/faqs.html')
 
 def accounts(request):
-    return render(request,'accounts/index.html')
+    return render(request,'accounts/accounts.html')
