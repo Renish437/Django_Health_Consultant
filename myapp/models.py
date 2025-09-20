@@ -24,6 +24,28 @@ class About(models.Model):
     def __str__(self):
         return f"{self.title}"
     
+class Services(models.Model):
+    logo = models.CharField(max_length=2555,null=True,blank=True)
+    title = models.CharField(max_length=255)
+    short_description = models.TextField()
+    image = models.ImageField(upload_to='images/services/photos',null=True,blank=True)
+    
+    def __str__(self):
+        return self.title
+
+class Slider(models.Model):
+    super_script = models.CharField(max_length=2555)
+    title = models.CharField(max_length=2555)
+    sub_script = models.TextField()
+    image = models.ImageField(upload_to='sliders/images')
+    
+    def __str__(self):
+        return self.title
+    
+    
+    
+    
+    
     
     
     

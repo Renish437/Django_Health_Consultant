@@ -42,20 +42,22 @@
 <section class="service-page-area">
     <div class="container">
         <div class="row">
-            <!--Start single item-->
+           
+           {% for service in services %}
+             <!--Start single item-->
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="single-service-item">
                     <div class="img-holder">
-                        <img src="{% static 'images/services/1.jpg' %}" alt="Balance Body Mind">
+                        <img src="{{service.image.url}}" alt="Balance Body Mind">
                         <div class="content">
                             <div class="text-holder text-center">
                                 <div class="inner">
                                     <div class="inner-content">
                                         <div class="icon-box">
-                                            <span class="flaticon-medical"></span>
+                                            <span class="{{service.logo}}"></span>
                                         </div>
-                                        <h3>Balance Body Mind</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
+                                        <h3>{{service.title}} </h3>
+                                        <p>{{service.short_description}}.</p>
                                         <a class="thm-btn bgclr-1" href="#">Read More</a>
                                     </div>
                                 </div>    
@@ -64,9 +66,10 @@
                                 <div class="inner">
                                     <div class="inner-content">
                                         <div class="icon-box">
-                                            <span class="flaticon-medical"></span>
+                                            <span class="{{service.logo}}"></span>
+                                           
                                         </div>
-                                        <h3>Balance Body Mind</h3>
+                                        <h3>{{service.title}}</h3>
                                     </div>
                                 </div>  
                             </div>
@@ -75,237 +78,9 @@
                 </div>
             </div>
             <!--End single item-->
-            <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-service-item">
-                    <div class="img-holder">
-                        <img src="{% static 'images/services/2.jpg' %}" alt="Physical Activity">
-                        <div class="content">
-                            <div class="text-holder text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-sports"></span>
-                                        </div>
-                                        <h3>Physical Activity</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
-                                        <a class="thm-btn bgclr-1" href="#">Read More</a>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="text-holder-1 text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-sports"></span>
-                                        </div>
-                                        <h3>Physical Activity</h3>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End single item-->
-            <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-service-item">
-                    <div class="img-holder">
-                        <img src="{% static 'images/services/3.jpg' %}" alt="Support & Motivation">
-                        <div class="content">
-                            <div class="text-holder text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-line"></span>
-                                        </div>
-                                        <h3>Support & Motivation</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
-                                        <a class="thm-btn bgclr-1" href="#">Read More</a>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="text-holder-1 text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-line"></span>
-                                        </div>
-                                        <h3>Support & Motivation</h3>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End single item-->
-            <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-service-item">
-                    <div class="img-holder">
-                        <img src="{% static 'images/services/4.jpg' %}" alt="Exercise Program">
-                        <div class="content">
-                            <div class="text-holder text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-people"></span>
-                                        </div>
-                                        <h3>Exercise Program</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
-                                        <a class="thm-btn bgclr-1" href="#">Read More</a>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="text-holder-1 text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-people"></span>
-                                        </div>
-                                        <h3>Exercise Program</h3>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End single item-->
-            <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-service-item">
-                    <div class="img-holder">
-                        <img src="{% static 'images/services/5.jpg' %}" alt="Healthy Daily Life">
-                        <div class="content">
-                            <div class="text-holder text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-food"></span>
-                                        </div>
-                                        <h3>Healthy Daily Life</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
-                                        <a class="thm-btn bgclr-1" href="#">Read More</a>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="text-holder-1 text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-food"></span>
-                                        </div>
-                                        <h3>Healthy Daily Life</h3>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End single item-->
-            <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-service-item">
-                    <div class="img-holder">
-                        <img src="{% static 'images/services/6.jpg' %}" alt="Improving Health">
-                        <div class="content">
-                            <div class="text-holder text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-medical-1"></span>
-                                        </div>
-                                        <h3>Improving Health</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
-                                        <a class="thm-btn bgclr-1" href="#">Read More</a>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="text-holder-1 text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-medical-1"></span>
-                                        </div>
-                                        <h3>Improving Health</h3>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End single item-->
-            <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-service-item">
-                    <div class="img-holder">
-                        <img src="{% static 'images/services/7.jpg' %}" alt="Personal Fitness">
-                        <div class="content">
-                            <div class="text-holder text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-dumbbell"></span>
-                                        </div>
-                                        <h3>Personal Fitness</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
-                                        <a class="thm-btn bgclr-1" href="#">Read More</a>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="text-holder-1 text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-dumbbell"></span>
-                                        </div>
-                                        <h3>Personal Fitness</h3>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End single item-->
-            <!--Start single item-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="single-service-item">
-                    <div class="img-holder">
-                        <img src="{% static 'images/services/8.jpg' %}" alt="First Hand Advice">
-                        <div class="content">
-                            <div class="text-holder text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-note-1"></span>
-                                        </div>
-                                        <h3>First Hand Advice</h3>
-                                        <p>Finding a workout is as easy as scrolling down, picking out the session that matches.</p>
-                                        <a class="thm-btn bgclr-1" href="#">Read More</a>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="text-holder-1 text-center">
-                                <div class="inner">
-                                    <div class="inner-content">
-                                        <div class="icon-box">
-                                            <span class="flaticon-note-1"></span>
-                                        </div>
-                                        <h3>First Hand Advice</h3>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End single item-->  
+           {% endfor %}
+            
+           
         </div>
     </div>
 </section>

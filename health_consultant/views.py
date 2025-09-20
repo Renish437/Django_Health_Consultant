@@ -3,8 +3,11 @@ from django.shortcuts import HttpResponse,render
 from myapp.models import *
 
 def home(request):
-  
-    return render(request,'home/home.html')
+    sliders = Slider.objects.all()
+    context = {
+        'sliders':sliders
+    }
+    return render(request,'home/home.html',context)
 
 def about(request):
     return render(request,'about/about.html')

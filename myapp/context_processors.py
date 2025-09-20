@@ -9,4 +9,8 @@ def top_navbar(request):
 def about(request):
     about = About.objects.first()
     return {"about":about}
+
+def services(request):
+    services = Services.objects.all()
+    return {"services":services}
     

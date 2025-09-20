@@ -4,5 +4,7 @@ from .models import *
 
 admin.site.register(TopNavbar)
 admin.site.register(About)
+admin.site.register(Services)
+admin.site.register(Slider)
 
 

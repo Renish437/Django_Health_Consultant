@@ -18,7 +18,6 @@ urlpatterns = [
     path('projects/',views.projects,name='projects'),
     path('faqs/',views.faqs,name="faqs"),
     path('account/',views.accounts,name="accounts"),
-    
     path('shop/',include('shop.urls')),
     path('blog/',include('blog.urls')),
     

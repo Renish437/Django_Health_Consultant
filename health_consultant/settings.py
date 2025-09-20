@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'myapp.context_processors.top_navbar',
                 'myapp.context_processors.about',
+                'myapp.context_processors.services',
             ],
         },
     },
