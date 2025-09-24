@@ -1303,6 +1303,7 @@ select:focus {
     border-bottom: 1px solid #f4f4f4;
     background: #ddd;
 }
+
 .single-blog-item .img-holder{
     overflow: hidden;
     position: relative;     
@@ -1328,19 +1329,32 @@ select:focus {
     position: absolute;
     bottom: 15px;
     left: 15px;
-    width: 110px;
-    height: 35px; 
+    width: auto;
+    height: auto; 
+      overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     transform: translate3d(0px, 0%, 0px);
     transition: all 500ms ease;
 }
+.single-blog-item .img-holder .categories {
+    min-width: 80px;
+    max-width: 200px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #2acb35;
+    white-space: nowrap;
+}
+
+
 .single-blog-item:hover .img-holder .categories {
     transform: translate3d(0px, -89px, 0px);
 }
 .single-blog-item .img-holder .categories a {
     text-align: center;
-    padding: 6px 0;
+    padding: 10px 5px;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;

@@ -45,156 +45,37 @@
             <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                 <div class="blog-post">
                     <div class="row">
-                        <!--Start single blog post-->
+                     
+                     {% for blog in blogs %}
+                           <!--Start single blog post-->
                         <div class="col-md-6">   
                             <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
                                 <div class="img-holder">
-                                    <img src="{% static 'images/blog/blog-default-1.jpg' %}" alt="Stop Getting Annoyed If You Want Better Health">
+                                    <img src="{{ blog.image.url}}" alt="{{blog.title}}">
                                     <div class="overlay-style-one"></div>
                                     <div class="categories">
-                                        <a href="#">Fitness</a>
+                                        <a href="#">{{blog.category.category_name}}</a>
                                     </div> 
                                 </div>
                                 <div class="text-holder">
                                     <ul class="meta-info">
-                                        <li><a href="#">June 18, 2017</a></li>
+                                        <li><a href="#">{{blog.created_at|date}}</a></li>
                                         <li><a href="#">10 Comments</a></li>
                                     </ul>
                                     <a href="#">
-                                        <h3 class="blog-title">Stop Getting Annoyed If You Want Better Health</h3>
+                                        <h3 class="blog-title">{{blog.title}}</h3>
                                     </a>
                                     <div class="text">
-                                        <p>pleasure and praising pain was born I will give you a complete account of the system, and expound actual teachings great.</p>
+                                        <p> {{blog.short_description|truncatechars:100}} </p>
                                     </div>
                                 </div>     
                             </div>  
                         </div>
                         <!--End single blog post-->
-                        <!--Start single blog post-->
-                        <div class="col-md-6">   
-                            <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/blog/blog-default-2.jpg' %}" alt="What is a “Healthy” Food? The Answer Will Surprise You">
-                                    <div class="overlay-style-one"></div>
-                                    <div class="categories">
-                                        <a href="#">Recipes</a>
-                                    </div> 
-                                </div>
-                                <div class="text-holder">
-                                    <ul class="meta-info">
-                                        <li><a href="#">May 24, 2017</a></li>
-                                        <li><a href="#">24 Comments</a></li>
-                                    </ul>
-                                    <a href="#">
-                                        <h3 class="blog-title">What is a “Healthy” Food? The Answer Will Surprise You</h3>
-                                    </a>
-                                    <div class="text">
-                                        <p>pleasure and praising pain was born I will give you a complete account of the system, and expound actual teachings great.</p>
-                                    </div>
-                                </div>    
-                            </div>  
-                        </div>
-                        <!--End single blog post-->
-                        <!--Start single blog post-->
-                        <div class="col-md-6">   
-                            <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/blog/blog-default-3.jpg' %}" alt="Build an Athletic Body With In Eight Weeks Time">
-                                    <div class="overlay-style-one"></div>
-                                    <div class="categories">
-                                        <a href="#">Crossfit</a>
-                                    </div> 
-                                </div>
-                                <div class="text-holder">
-                                    <ul class="meta-info">
-                                        <li><a href="#">April 26, 2017</a></li>
-                                        <li><a href="#">18 Comments</a></li>
-                                    </ul>
-                                    <a href="#">
-                                        <h3 class="blog-title">Build an Athletic Body With In Eight Weeks Time</h3>
-                                    </a>
-                                    <div class="text">
-                                        <p>pleasure and praising pain was born I will give you a complete account of the system, and expound actual teachings great.</p>
-                                    </div>
-                                </div>     
-                            </div>  
-                        </div>
-                        <!--End single blog post-->
-                        <!--Start single blog post-->
-                        <div class="col-md-6">   
-                            <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/blog/blog-default-4.jpg' %}" alt="Get Free Weight Lose Tips From Our Experts">
-                                    <div class="overlay-style-one"></div>
-                                    <div class="categories">
-                                        <a href="#">Fitness</a>
-                                    </div> 
-                                </div>
-                                <div class="text-holder">
-                                    <ul class="meta-info">
-                                        <li><a href="#">April 21, 2017</a></li>
-                                        <li><a href="#">10 Comments</a></li>
-                                    </ul>
-                                    <a href="#">
-                                        <h3 class="blog-title">Get Free Weight Lose Tips From Our Experts</h3>
-                                    </a>
-                                    <div class="text">
-                                        <p>pleasure and praising pain was born I will give you a complete account of the system, and expound actual teachings great.</p>
-                                    </div>
-                                </div>     
-                            </div>  
-                        </div>
-                        <!--End single blog post-->
-                        <!--Start single blog post-->
-                        <div class="col-md-6">   
-                            <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/blog/blog-default-5.jpg' %}" alt="Yoga and Healthy Food Making Your Family Happy">
-                                    <div class="overlay-style-one"></div>
-                                    <div class="categories">
-                                        <a href="#">Recipes</a>
-                                    </div> 
-                                </div>
-                                <div class="text-holder">
-                                    <ul class="meta-info">
-                                        <li><a href="#">February 05, 2017</a></li>
-                                        <li><a href="#">24 Comments</a></li>
-                                    </ul>
-                                    <a href="#">
-                                        <h3 class="blog-title">Yoga and Healthy Food Making Your Family Happy</h3>
-                                    </a>
-                                    <div class="text">
-                                        <p>pleasure and praising pain was born I will give you a complete account of the system, and expound actual teachings great.</p>
-                                    </div>
-                                </div>    
-                            </div>  
-                        </div>
-                        <!--End single blog post-->
-                        <!--Start single blog post-->
-                        <div class="col-md-6">   
-                            <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/blog/blog-default-6.jpg' %}" alt="Our Trainer Teaching About Fitness to Senior Person">
-                                    <div class="overlay-style-one"></div>
-                                    <div class="categories">
-                                        <a href="#">Crossfit</a>
-                                    </div> 
-                                </div>
-                                <div class="text-holder">
-                                    <ul class="meta-info">
-                                        <li><a href="#">January 14, 2017</a></li>
-                                        <li><a href="#">18 Comments</a></li>
-                                    </ul>
-                                    <a href="#">
-                                        <h3 class="blog-title">Our Trainer Teaching About Fitness to Senior Person</h3>
-                                    </a>
-                                    <div class="text">
-                                        <p>pleasure and praising pain was born I will give you a complete account of the system, and expound actual teachings great.</p>
-                                    </div>
-                                </div>    
-                            </div>  
-                        </div>
-                        <!--End single blog post-->
+                     {% endfor %}
+                        
+                   
+                    
                     </div>
                     <!--Start post pagination-->
                     <div class="row">
@@ -230,7 +111,7 @@
                         <ul class="categories clearfix">
                            
                            {% for category in categories %}
-                             <li><a href="#"> {{category.category_name}} <span>(5)</span></a></li>
+                             <li><a href="#"> {{category.category_name}} <span>({{category.blog_category.count}})</span></a></li>
                            {% endfor %}
                             
                            
