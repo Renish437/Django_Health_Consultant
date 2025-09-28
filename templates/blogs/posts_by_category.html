@@ -7,7 +7,7 @@
 	    <div class="row">
 	        <div class="col-md-12">
 	            <div class="breadcrumbs">
-	                <h1>Blog Default</h1>
+	                <h1>Blog by {{category.category_name}}</h1>
 	            </div>
 	        </div>
 	    </div>
@@ -24,7 +24,7 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li class="active">Blog Default</li>
+                        <li class="active">Blog By {{category.category_name}}</li>
                     </ul>
                 </div>
                 <div class="right pull-right">
@@ -39,10 +39,12 @@
 <!--End breadcrumb bottom area-->
 
 <!--Start blog area-->
-<section id="blog-area" class="blog-default-area">
+
+  <section id="blog-area" class="blog-default-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                {% if blogs.exists %}
                 <div class="blog-post">
                     <div class="row">
                      
@@ -91,6 +93,15 @@
                     </div>
                     <!--End post pagination-->
                 </div>
+                {% else %}
+ <div id="blog-post" >
+    <div class="row">
+        <div class="col-md-8 mx-auto"> 
+       <h2> No blogs found in {{category.category_name}} category</h2>
+        </div>
+        </div>
+ </div>
+{% endif %}
             </div>
             <!--Start sidebar Wrapper-->
             <div class="col-lg-4 col-md-6 col-sm-7 col-xs-12">
@@ -289,5 +300,6 @@
         </div>
     </div>
 </section> 
+
 <!--End blog area-->
 {% endblock content %}

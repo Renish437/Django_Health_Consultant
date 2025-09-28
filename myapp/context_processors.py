@@ -1,4 +1,5 @@
 from .models import *
+from blog.models import *
 
 def top_navbar(request):
     
@@ -13,4 +14,7 @@ def about(request):
 def services(request):
     services = Services.objects.all()
     return {"services":services}
+def categories(request):
+    categories = Category.objects.all()
+    return {"categories":categories}
     
