@@ -68,6 +68,8 @@ TEMPLATES = [
                 'myapp.context_processors.about',
                 'myapp.context_processors.services',
                 'myapp.context_processors.categories',
+              
+                
             ],
         },
     },
