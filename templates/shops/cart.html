@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  
+
+
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area" style="background-image: url('{% static "images/resources/breadcrumb-bg.jpg" %}');">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="breadcrumbs">
+	                <h1>Shopping Cart</h1>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</section>
+<!--End breadcrumb area-->
+
+<!--Start breadcrumb bottom area-->     
+<section class="breadcrumb-bottom-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Shopping Cart</li>
+                    </ul>
+                </div>
+                <div class="right pull-right">
+                    <a href="#">
+                        <span><i class="fa fa-share-alt" aria-hidden="true"></i>Share</span> 
+                    </a>   
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb bottom area-->
+
+<!--Start cart area-->
+ <section class="cart-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-outer">
+                    <table class="cart-table">
+                        <thead class="cart-header">
+                            <tr>
+                                <th class="prod-column">Products</th>
+                                <th>&nbsp;</th>
+                                <th>Quantity</th>
+                                <th class="availability">Availability</th>
+                                <th class="price">Price</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>    
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" class="prod-column">
+                                    <div class="column-box">
+                                        <div class="prod-thumb">
+                                            <a href="#"><img src="{% static 'images/shop/product-thumb-1.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="title">
+                                            <h3 class="prod-title">Portable Mobile Stand</h3>
+                                        </div>    
+                                    </div>
+                                </td>
+                                <td class="qty">
+                                    <input class="quantity-spinner" type="text" value="1" name="quantity">
+                                </td>
+                                <td class="unit-price">
+                                    <div class="available-info">
+                                        <span class="icon fa fa-check"></span>Item(s)<br>Avilable Now
+                                    </div>
+                                </td>
+                                <td class="price">$34.99</td>
+                                <td class="sub-total">$69.98</td>
+                                <td>
+                                    <div class="remove">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="remove" type="checkbox">
+                                                <span>Remove</span>
+                                            </label>
+                                        </div>   
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="prod-column">
+                                    <div class="column-box">
+                                        <div class="prod-thumb">
+                                            <a href="#"><img src="{% static 'images/shop/product-thumb-2.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="title">
+                                            <h3 class="prod-title">Portable Mobile Stand</h3>
+                                        </div>    
+                                    </div>
+                                </td>
+                                <td class="qty">
+                                    <input class="quantity-spinner" type="text" value="2" name="quantity">
+                                </td>
+                                <td class="unit-price">
+                                    <div class="available-info">
+                                        <span class="icon fa fa-check"></span>Item(s)<br>Avilable Now
+                                    </div>
+                                </td>
+                                <td class="price">$29.99</td>
+                                <td class="sub-total">$29.99</td>
+                                <td>
+                                    <div class="remove">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="remove" type="checkbox">
+                                                <span>Remove</span>
+                                            </label>
+                                        </div>   
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>    
+                    </table>
+                </div>
+            </div>     
+        </div>
+</div>
+ </section>
+{% endblock content %}
