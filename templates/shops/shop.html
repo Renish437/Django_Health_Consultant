@@ -61,10 +61,12 @@
                     </div>
                     <div class="row">
                         <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                      
+                      {% for product in products %}
+                          <div class="col-md-4 col-sm-4 col-xs-12">
                             <div class="single-product-item">
                                 <div class="img-holder">
-                                    <img src="{% static 'images/shop/1.jpg' %}" alt="Jumping Rope">
+                                    <img src="{{product.image.url}}" alt="{{product.product_name}}">
                                     <div class="overlay-style-one">
                                         <div class="box">
                                             <div class="content">
@@ -76,305 +78,37 @@
                                 <div class="title-holder">
                                     <div class="top clearfix">
                                         <div class="product-title pull-left">
-                                            <h5>Jumping Rope</h5>
+                                            <h5>{{product.product_name}}</h5>
                                         </div>
                                         <div class="review-box pull-right">
                                             <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
+                                          
+    {% for i in "12345" %}
+        {% if forloop.counter <= product.rating %}
+            <li><i class="fa fa-star text-yellow-400"></i></li>  {# filled star #}
+        {% else %}
+            <li><i class="fa fa-star-o text-gray-400"></i></li>  {# empty star #}
+        {% endif %}
+    {% endfor %}
+
+
                                             </ul>
                                         </div>    
                                     </div>
                                     <div class="product-value">
-                                        <h4>$34.99</h4>
+                                        <h4>${{product.price}}</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                      {% endfor %}
+                        
                         <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/2.jpg' %}" alt="Running Shoe">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Running Shoe</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$44.99</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/3.jpg' %}" alt="Herbal Tea Bag">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Herbal Tea Bag</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$19.00</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/4.jpg' %}" alt="Yoga Mat Bag">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Yoga Mat Bag</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$44.99</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/5.jpg' %}" alt="Jumping Rope">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Jumping Rope</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$19.99</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/6.jpg' %}" alt="Hex Dumbbells">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Hex Dumbbells</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$29.99</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/7.jpg' %}" alt="Dumbbells 2Kg">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Dumbbells 2Kg</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$24.99 <del>$34.99</del></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/8.jpg' %}" alt="Yoga Mat Set">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Yoga Mat Set</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$59.99</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
-                        <!--Start single product item-->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single-product-item">
-                                <div class="img-holder">
-                                    <img src="{% static 'images/shop/9.jpg' %}" alt="Anti Burst Ball">
-                                    <div class="overlay-style-one">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a class="thm-btn bgclr-1" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title-holder">
-                                    <div class="top clearfix">
-                                        <div class="product-title pull-left">
-                                            <h5>Anti Burst Ball</h5>
-                                        </div>
-                                        <div class="review-box pull-right">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                    <div class="product-value">
-                                        <h4>$45.00</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single product item-->
+                    
+                      
+                  
+                     
+                    
                     </div>
                     <div class="row">
                         <div class="col-md-12"> 
@@ -408,7 +142,7 @@
                         <ul class="categories clearfix">
                             
                             {% for category in shop_categories %}
-                                <li><a href="#">{{category.category_name}} <span>(6)</span></a></li>
+                                <li><a href="#">{{category.category_name}} <span>({{category.product_category.count}})</span></a></li>
                             {% endfor %}
                                 
                           

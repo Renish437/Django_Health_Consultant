@@ -4,8 +4,10 @@ from .models import *
 
 def shops(request):
     shop_categories = Category.objects.filter(is_active=True)
+    products = Product.objects.filter(is_available=True,stock__gt=0).order_by('-created_at')
     context={
-        "shop_categories":shop_categories
+        "shop_categories":shop_categories,
+        "products":products
     }
     return render(request,'shops/shop.html',context)
 
