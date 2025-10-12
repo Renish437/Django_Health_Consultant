@@ -1,0 +1,156 @@
+{% load static %}
+   <div class="col-lg-3 col-md-7 col-sm-7 col-xs-12 pull-left">
+                <div class="sidebar-wrapper">
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <form class="search-form" method="GET" action="{%url 'shop_search'%}" >
+							<input 
+                                    name="keyword"
+                placeholder="Search..."
+                type="text"
+                value="{{ request.GET.keyword|default:'' }}">
+							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+						</form>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="sec-title">
+                            <h3>Categories</h3>
+                        </div>
+                        <ul class="categories clearfix">
+                            
+                            {% for category in product_categories %}
+                                <li><a href="{%url 'product_category' category.slug %}">{{category.category_name}} <span>({{category.product_category.count}})</span></a></li>
+                            {% endfor %}
+                                
+                          
+                        </ul>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start single sidebar--> 
+                    <div class="single-sidebar">
+                        <div class="sec-title">
+                            <h3>Filter By Price</h3>
+                        </div>
+                        <div class="price-ranger">
+                            <div id="slider-range"></div>
+                            <div class="ranger-min-max-block">
+                                <input type="submit" value="Filter">
+                                <span>Price:</span>
+                                <input type="text" readonly class="min"> 
+                                <span>-</span>
+                                <input type="text" readonly class="max">
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start single sidebar--> 
+                    <div class="single-sidebar">
+                        <div class="sec-title">
+                            <h3>Popular Products</h3>
+                        </div>
+                        <ul class="popular-product">
+                            <li>
+                                <div class="img-holder">
+                                    <img src="{% static 'images/shop/product-thumb-1.jpg' %}" alt="The Innovators">
+                                    <div class="overlay-style-one">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-holder">
+                                    <a href="#">
+                                        <h4>The Innovators</h4>
+                                    </a>
+                                    <h5>$34.99</h5>
+                                    <div class="review-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li>
+                                <div class="img-holder">
+                                    <img src="{% static 'images/shop/product-thumb-2.jpg' %}" alt="Good to Great">
+                                    <div class="overlay-style-one">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-holder">
+                                    <a href="#">
+                                        <h4>Good to Great</h4>
+                                    </a>
+                                    <h5>$29.00</h5>
+                                    <div class="review-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li>
+                                <div class="img-holder">
+                                    <img src="{% static 'images/shop/product-thumb-3.jpg' %}" alt="Built to Last">
+                                    <div class="overlay-style-one">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-holder">
+                                    <a href="#">
+                                        <h4>Built to Last</h4>
+                                    </a>
+                                    <h5>$24.99</h5>
+                                    <div class="review-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </li>
+                        </ul>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start single sidebar--> 
+                    <div class="single-sidebar">
+                        <div class="sec-title">
+                            <h3>Tag Cloud</h3>
+                        </div>
+                        <ul class="product-tag">
+                            <li><a href="#">Idea</a></li>    
+                            <li><a href="#">Finance</a></li>    
+                            <li><a href="#">Experts</a></li>    
+                            <li><a href="#">Marketing</a></li>    
+                            <li><a href="#">Services</a></li>    
+                            <li><a href="#">Tips</a></li>    
+                            <li><a href="#">Growth</a></li>    
+                            <li><a href="#">Wealth</a></li>    
+                        </ul>    
+                    </div>
+                    <!--End single sidebar--> 
+                </div>    
+            </div>

@@ -1,5 +1,6 @@
 from .models import *
 from blog.models import *
+from shop.models import Category as ShopCategory
 
 def top_navbar(request):
     
@@ -17,4 +18,8 @@ def services(request):
 def categories(request):
     categories = Category.objects.all()
     return {"categories":categories}
+
+def product_categories(request):
+    product_categories = ShopCategory.objects.filter(is_active=True)
+    return {"product_categories":product_categories}
     
