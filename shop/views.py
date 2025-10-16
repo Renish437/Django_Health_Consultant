@@ -57,3 +57,16 @@ def product_category(request,slug):
           'page_obj':page_obj
     }
     return render(request,'shops/shop-category.html',context)
+
+
+
+def product_detail(request,category_slug=None,product_slug=None):
+    
+    try:
+        product = Product.objects.get(category__slug=category_slug,slug=product_slug)
+    except Exception as e:
+        raise e
+    context ={
+       'product':product
+    }
+    return render(request,'shops/product-detail.html',context)

@@ -1,6 +1,6 @@
 from .models import *
 from blog.models import *
-from shop.models import Category as ShopCategory
+from shop.models import Category as ShopCategory,Product
 
 def top_navbar(request):
     
@@ -20,6 +20,8 @@ def categories(request):
     return {"categories":categories}
 
 def product_categories(request):
+    
     product_categories = ShopCategory.objects.filter(is_active=True)
-    return {"product_categories":product_categories}
+    product_count = Product.objects.count()
+    return {"product_categories":product_categories,'product_count':product_count}
     

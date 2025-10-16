@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+from django.urls import reverse
 
 class Category(models.Model):
     category_name = models.CharField(max_length=100,unique=True)
@@ -33,7 +33,8 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
-    
+    def get_detail_url(self):
+        return reverse('product-detail',args={self.category.slug,self.slug})
     
     class Meta:
         db_table = 'shop_products'
