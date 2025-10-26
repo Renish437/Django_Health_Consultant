@@ -30,6 +30,8 @@ class Services(models.Model):
     short_description = models.TextField()
     image = models.ImageField(upload_to='images/services/photos',null=True,blank=True)
     
+    class Meta:
+       verbose_name_plural = 'Services'
     def __str__(self):
         return self.title
 

@@ -15,7 +15,7 @@ def shops(request):
     else:
         products = Product.objects.filter(is_available=True, stock__gt=0).order_by('-created_at')
     
-    paginator = Paginator(products, 4)
+    paginator = Paginator(products, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
@@ -47,7 +47,7 @@ def product_category(request,slug):
         products = Product.objects.filter(category=category,is_available=True)
     
     # Pagination
-    paginator = Paginator(products, 4)  # 4 blogs per page
+    paginator = Paginator(products, 6)  # 4 blogs per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
@@ -60,13 +60,11 @@ def product_category(request,slug):
 
 
 
-def product_detail(request,category_slug=None,product_slug=None):
-    
-    try:
-        product = Product.objects.get(category__slug=category_slug,slug=product_slug)
-    except Exception as e:
-        raise e
-    context ={
-       'product':product
-    }
-    return render(request,'shops/product-detail.html',context)
+def product_detail(request, category_slug=None, product_slug=None):
+    product = get_object_or_404(Product, category__slug=category_slug, slug=product_slug)
+    context = {'product': product}
+    return render(request, 'shops/product-detail.html', context)
+
+
+def shopping_cart(request):
+    return render(request,'shops/shopping-cart.html')

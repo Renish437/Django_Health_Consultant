@@ -14,3 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('id','product_name','price','category','stock','is_available')
     
 admin.site.register(Product,ProductAdmin)
+
+
+admin.site.register(Cart)
+admin.site.register(CartItem)
