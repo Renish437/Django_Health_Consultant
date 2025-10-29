@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import *
 from django.db.models import Q
 from django.core.paginator import Paginator
@@ -66,5 +66,53 @@ def product_detail(request, category_slug=None, product_slug=None):
     return render(request, 'shops/product-detail.html', context)
 
 
-def shopping_cart(request):
-    return render(request,'shops/shopping-cart.html')
+
+def _cart_id(request):
+    """Get or create a unique cart ID for the session."""
+    cart = request.session.session_key
+    if not cart:
+        cart = request.session.create()
+    return cart
+
+
+def shopping_cart(request, total=0, quantity=0, cart_items=None):
+    """Display the shopping cart page."""
+    try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        cart_items = CartItem.objects.filter(cart=cart, is_active=True)
+        for cart_item in cart_items:
+            total += cart_item.product.price * cart_item.quantity
+            quantity += cart_item.quantity
+    except Cart.DoesNotExist:
+        cart_items = []
+
+    context = {
+        'total': total,
+        'quantity': quantity,
+        'cart_items': cart_items,
+    }
+
+    return render(request, 'shops/shopping-cart.html', context)
+
+
+def add_to_cart(request, product_id):
+    """Add a product to the cart or increase its quantity."""
+    product = get_object_or_404(Product, id=product_id)
+    cart, created = Cart.objects.get_or_create(cart_id=_cart_id(request))
+
+    try:
+        # If the item already exists in the cart, increase its quantity
+        cart_item = CartItem.objects.get(product=product, cart=cart)
+        cart_item.quantity += 1
+        cart_item.save()
+    except CartItem.DoesNotExist:
+        # Otherwise, create a new cart item
+        cart_item = CartItem.objects.create(
+            product=product,
+            quantity=1,
+            cart=cart
+        )
+
+    return redirect('shopping-cart')
+
+            
